@@ -1,0 +1,610 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>APCS graphics</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;java&quot;,&quot;javascript&quot;,&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="java">java</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="python">python</a>
+        </div>
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="apcs-graphics">APCS graphics</h1>
+
+<p>APCS graphics is an open-source multi-language approach to learning and teaching All Principles of Computer Science.</p>
+
+<p>The <a href="lab">game development labs</a> teach computer science through animation and digital artwork, which is a fantastic medium for younger students. The <a href="mp">machine problems</a> build algorithmic thinking and problem solving skills that are essential for computation challenges like <a href="usaco">USACO</a>.</p>
+
+<blockquote>
+<p>The core APCS graphics libraries are hosted on <a href="https://github.com/apcsio">GitHub</a>. We encourage developers and educators to interact with us on GitHub and make contributions to this project!</p>
+</blockquote>
+
+<p><strong>Java:</strong> read the <a href="start/java">getting started guide</a> to get Eclipse, Java 8, and the APCS graphics library set up on your computer.</p>
+
+<p><a href="java/Window.java" class="download">Window.java</a></p>
+
+<p><strong>JavaScript:</strong> add the <a href="js/apcs.js">JavaScript library</a> to any HTML page.</p>
+
+<p><a href="js/apcs.js" class="download">apcs.js</a></p>
+
+<p><strong>Python:</strong> quickly get started with <a href="https://pythonroom.com">pythonroom.com</a>, our web-based coding editor, or read the <a href="start/python">guide</a> to get a Python editor and the APCS graphics package set up on your computer.</p>
+
+<p><a href="python/apcs.py" class="download">apcs.py</a></p>
+
+<aside class="success">
+    The complete list of labs is at <a href="lab">apcs.io/lab</a>.
+</aside>
+
+<aside class="notice">
+    The complete list of machine problems is at <a href="lab">apcs.io/mp</a>.
+</aside>
+
+<p>APCS graphics is an open-source project by <a href="https://github.com/keshavsaharia">Keshav Saharia</a> and the team at <a href="http://hulaloop.io">Hulaloop</a>. We welcome contributions to this project on <a href="https://github.com/apcsio">GitHub</a>.</p>
+
+<h2 id="quickstart">Quickstart</h2>
+<pre class="highlight html"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://apcs.io/js/apcs.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+
+<p>You can quickly start using APCS graphics with JavaScript. Simply add the <code class="prettyprint">script</code> tag for <code class="prettyprint">apcs.js</code> into any webpage, or copy-and-paste the full HTML example into a <code class="prettyprint">.html</code> file.</p>
+<pre class="highlight html"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Red Circle by Blue Square<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://apcs.io/js/apcs.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="s2">"red"</span><span class="p">);</span>
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
+
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="s2">"blue"</span><span class="p">);</span>
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">square</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+
+<p>Most JavaScript examples have a live preview button next to them. You can also write code on
+<a href="https://apcsroom.com">apcsroom.com</a>, which makes it easy for anyone to learn and teach with APCS graphics.</p>
+
+<p><img src="images/home/javascript.png" /></p>
+
+<h1 id="philosophy">Philosophy</h1>
+
+<p>Teaching computer science is much more engaging when it is done visually. However, each language has its own set of graphics functionality which is usually too complicated for a beginner to understand.</p>
+
+<p>APCS graphics standardizes graphics functionality to static methods, so there are no mysterious classes to extend or boilerplate templates required. You can start from scratch and quickly put together a simulation of a bouncing ball, the viral game Flappy Bird, or a clone of agar.io.</p>
+
+<p>Currently we support <a href="start/java">Java</a>, <a href="start/python">Python</a>, and <a href="start/javascript">JavaScript</a>.</p>
+<pre class="highlight java"><code><span class="c1">// A bouncing ball simulation</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">50</span><span class="o">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">50</span><span class="o">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Start one frame of the animation.</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">frame</span><span class="o">();</span>
+
+    <span class="c1">// Draw the ball.</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="s">"white"</span><span class="o">);</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">color</span><span class="o">(</span><span class="s">"red"</span><span class="o">);</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">circle</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">20</span><span class="o">);</span>
+
+    <span class="c1">// Move the ball.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="o">;</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">dy</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+
+    <span class="c1">// Bounce the ball.</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">480</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mi">480</span><span class="o">;</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="n">dy</span> <span class="o">*</span> <span class="o">-</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="nx">dy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// One frame of the animation.</span>
+<span class="nx">Window</span><span class="p">.</span><span class="nx">frame</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Draw the ball.</span>
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">background</span><span class="p">(</span><span class="s2">"white"</span><span class="p">);</span>
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="s2">"red"</span><span class="p">);</span>
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+    <span class="c1">// Move the ball.</span>
+    <span class="nx">x</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+    <span class="nx">y</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">dy</span><span class="p">;</span>
+    <span class="nx">dy</span> <span class="o">=</span> <span class="nx">dy</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="c1">// Bounce the ball.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">480</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">y</span> <span class="o">=</span> <span class="mi">480</span><span class="p">;</span>
+        <span class="nx">dy</span> <span class="o">=</span> <span class="nx">dy</span> <span class="o">*</span> <span class="o">-</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span>
+
+<span class="c"># One frame of the animation</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dy</span>
+
+    <span class="c"># Draw the ball</span>
+    <span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="s">"white"</span><span class="p">)</span>
+    <span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s">"red"</span><span class="p">)</span>
+    <span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+    <span class="c"># Move the ball.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">dy</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c"># Bounce the ball if it hits the ground.</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">480</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="mi">480</span><span class="p">;</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="n">dy</span> <span class="o">*</span> <span class="o">-</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="n">Window</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">Window</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+<span class="n">Window</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/physics.gif" /></p>
+
+<h1 id="drawing">Drawing</h1>
+
+<p>The functions for drawing ovals, rectangles, lines, polygons, and text are organized in the <code class="prettyprint">Window.out</code> class.</p>
+
+<blockquote>
+<p>Calling any <code class="prettyprint">Window.out</code> method will create a default window that is 500 x 500 pixels if the window is not already open.</p>
+</blockquote>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/window-drawing.png" /></p>
+
+<h2 id="window-size">Window.size</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Window</span><span class="p">.</span><span class="nx">size</span><span class="p">(</span><span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">Window</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+</code></pre>
+
+<p>The <code class="prettyprint">Window.size</code> method sets the dimensions of the window.</p>
+
+<aside class="notice">
+Calling <code>Window.size</code> is optional - performing any other drawing command will automatically create a window of the default size (500 x 500).
+</aside>
+
+<h2 id="window-out-color">Window.out.color</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">color</span><span class="o">(</span><span class="kt">int</span> <span class="n">r</span><span class="o">,</span> <span class="kt">int</span> <span class="n">g</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span>
+<span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">color</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">alpha</span><span class="p">)</span>
+<span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">color</span><span class="p">(</span><span class="nx">colorString</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">colorString</span><span class="p">)</span>
+</code></pre>
+
+<p>Sets the current drawing color to the given color, either as an RGB value, as a color hex code, or as a built-in color name. Any subsequent calls to a
+<code class="prettyprint">Window.out</code> function will use the given drawing color.</p>
+
+<h2 id="window-out-background">Window.out.background</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">)</span>
+<span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="kt">int</span> <span class="n">r</span><span class="o">,</span> <span class="kt">int</span> <span class="n">g</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">background</span><span class="p">(</span><span class="nx">color</span><span class="p">)</span>
+<span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">background</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+<span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></pre>
+
+<p>Sets the background of the window to the color specified by the string name, hex code, or RGB value (this value is passed to <a href="#Window.out.color"><code class="prettyprint">Window.out.color</code></a>).</p>
+
+<aside class="notice">
+This method erases everything that has been drawn on the window and replaces it with the given color. The current drawing color of the window
+will also be set to the given color.
+</aside>
+
+<h2 id="window-out-circle">Window.out.circle</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">circle</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">radius</span><span class="o">)</span>
+<span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">circle</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+</code></pre>
+
+<p><code class="prettyprint">Window.out.circle</code> draws a circle centered at the position (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) with the given <code class="prettyprint">radius</code>.</p>
+<pre class="highlight java"><code><span class="c1">// A class to describe a single ball.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ball</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">dx</span><span class="o">,</span> <span class="n">dy</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">Ball</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">draw</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">move</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Create a list of Ball objects.</span>
+<span class="n">Ball</span><span class="o">[]</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ball</span><span class="o">[</span><span class="mi">100</span><span class="o">];</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="n">list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ball</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="s">"white"</span><span class="o">);</span>
+
+    <span class="c1">// Draw and move each ball.</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">Ball</span> <span class="n">b</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">draw</span><span class="o">();</span>
+        <span class="n">b</span><span class="o">.</span><span class="na">move</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="n">Window</span><span class="o">.</span><span class="na">frame</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="c1">// Describes a single ball object</span>
+<span class="kd">function</span> <span class="nx">Ball</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="p">...</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="p">...</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">draw</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">move</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="c1">// Create a list of Ball objects.</span>
+<span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">new</span> <span class="nx">Ball</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="nx">Window</span><span class="p">.</span><span class="nx">frame</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">background</span><span class="p">(</span><span class="s2">"white"</span><span class="p">);</span>
+
+    <span class="c1">// Draw and move each ball.</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">draw</span><span class="p">();</span>
+        <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">move</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+<pre class="highlight python"><code><span class="k">class</span> <span class="nc">Ball</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">move</span><span class="p">():</span>
+        <span class="o">...</span>
+
+<span class="n">balls</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">balls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Ball</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
+    <span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">background</span><span class="p">(</span><span class="s">"white"</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">balls</span><span class="p">:</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/multi-ball.gif" /></p>
+
+<h2 id="window-out-square">Window.out.square</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">square</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">square</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">length</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</code></pre>
+
+<p><code class="prettyprint">Window.out.square</code> draws a square centered at the position (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) with the given side <code class="prettyprint">length</code>.</p>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/gameoflife.gif" /></p>
+
+<h2 id="window-out-rectangle">Window.out.rectangle</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">rectangle</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">rectangle</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+</code></pre>
+
+<p><code class="prettyprint">Window.out.rectangle</code> draws a rectangle centered at the position (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) with the given <code class="prettyprint">width</code> and <code class="prettyprint">height</code>.</p>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/flappybird.gif" /></p>
+
+<h2 id="window-out-oval">Window.out.oval</h2>
+
+<p><code class="prettyprint">Window.out.oval</code> draws an oval centered at the position (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) with the given <code class="prettyprint">width</code> and <code class="prettyprint">height</code>.</p>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">oval</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">)</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/flappy-basic.gif" /></p>
+
+<blockquote>
+<p>We start the <a href="https://techlab.education/java/flappy-bird">Flappy Bird lab</a> by drawing a simple oval to represent the bird, and first implementing the physics behind the bird&rsquo;s motion.</p>
+</blockquote>
+
+<h2 id="window-out-line">Window.out.line</h2>
+
+<p><code class="prettyprint">Window.out.line</code> draws a line between the starting position (<code class="prettyprint">x1</code>, <code class="prettyprint">y1</code>) and the ending position (<code class="prettyprint">x2</code>, <code class="prettyprint">y2</code>).</p>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">line</span><span class="o">(</span><span class="n">x1</span><span class="o">,</span> <span class="n">y1</span><span class="o">,</span> <span class="n">x2</span><span class="o">,</span> <span class="n">y2</span><span class="o">)</span>
+</code></pre>
+
+<h2 id="window-out-image">Window.out.image</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">image</span><span class="o">(</span><span class="n">String</span> <span class="n">image</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">,</span><span class="kt">int</span> <span class="n">y</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">image</span><span class="o">(</span><span class="n">image</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span>
+</code></pre>
+
+<p><code class="prettyprint">Window.out.image</code> draws the image located at the <code class="prettyprint">image</code> string at the given (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) coordinate in the top left corner.</p>
+
+<h2 id="window-out-background">Window.out.background</h2>
+
+<p><code class="prettyprint">Window.out.background</code> sets the background of the window to the color specified by the string name or RGB value. <strong>This method erases everything that has been drawn on the window and replaces it with the given color.</strong> Setting the background will also change the current drawing color to that color.</p>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="n">colorName</span><span class="o">)</span>
+<span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="n">red</span><span class="o">,</span> <span class="n">green</span><span class="o">,</span> <span class="n">blue</span><span class="o">)</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/single-ball.gif" /></p>
+<pre class="highlight java"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">250</span><span class="o">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">250</span><span class="o">,</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mi">4</span><span class="o">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Draw the background first.</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="s">"white"</span><span class="o">);</span>
+
+    <span class="c1">// Change the color to the ball's color, then draw it.</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">color</span><span class="o">(</span><span class="s">"red"</span><span class="o">);</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">circle</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+
+    <span class="c1">// Move the ball.</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="o">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="o">;</span>
+
+    <span class="c1">// Check for collisions.</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">490</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">490</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+
+    <span class="c1">// Draw one frame.</span>
+    <span class="n">Window</span><span class="o">.</span><span class="na">frame</span><span class="o">();</span>
+<span class="o">}</span>
+
+</code></pre>
+
+<h1 id="mouse-input">Mouse input</h1>
+
+<h2 id="window-mouse-getx">Window.mouse.getX</h2>
+
+<p>Returns the x position of the mouse.</p>
+<pre class="highlight java"><code><span class="kt">int</span> <span class="n">Window</span><span class="o">.</span><span class="na">mouse</span><span class="o">.</span><span class="na">getX</span><span class="o">()</span>
+<span class="kt">int</span> <span class="n">Window</span><span class="o">.</span><span class="na">mouse</span><span class="o">.</span><span class="na">getY</span><span class="o">()</span>
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/window-mouse.png" /></p>
+
+<h2 id="window-mouse-gety">Window.mouse.getY</h2>
+<pre class="highlight java"><code><span class="kt">int</span> <span class="n">Window</span><span class="o">.</span><span class="na">mouse</span><span class="o">.</span><span class="na">getY</span><span class="o">()</span>
+</code></pre>
+
+<p>Returns the y position of the mouse.</p>
+
+<aside class="notice">
+The y-axis in Java graphics is inverted, so the mouse&rsquo;s y position increases as it moves down rather than up.
+</aside>
+
+<h2 id="window-mouse-clicked">Window.mouse.clicked</h2>
+<pre class="highlight java"><code><span class="kt">boolean</span> <span class="n">Window</span><span class="o">.</span><span class="na">mouse</span><span class="o">.</span><span class="na">clicked</span><span class="o">()</span>
+</code></pre>
+
+<p>Returns <code class="prettyprint">true</code> if the mouse is currently clicked, and <code class="prettyprint">false</code> otherwise.</p>
+
+<h1 id="keyboard-input">Keyboard input</h1>
+
+<h2 id="window-key-pressed">Window.key.pressed</h2>
+<pre class="highlight java"><code><span class="kt">boolean</span> <span class="n">Window</span><span class="o">.</span><span class="na">key</span><span class="o">.</span><span class="na">pressed</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span>
+<span class="kt">boolean</span> <span class="n">Window</span><span class="o">.</span><span class="na">key</span><span class="o">.</span><span class="na">pressed</span><span class="o">(</span><span class="kt">char</span> <span class="n">key</span><span class="o">)</span>
+</code></pre>
+
+<p>Returns <code class="prettyprint">true</code> if the given key is pressed, and <code class="prettyprint">false</code> otherwise.</p>
+
+<h2 id="window-key-released">Window.key.released</h2>
+<pre class="highlight java"><code><span class="kt">boolean</span> <span class="n">Window</span><span class="o">.</span><span class="na">key</span><span class="o">.</span><span class="na">released</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span>
+<span class="kt">boolean</span> <span class="n">Window</span><span class="o">.</span><span class="na">key</span><span class="o">.</span><span class="na">released</span><span class="o">(</span><span class="kt">char</span> <span class="n">key</span><span class="o">)</span>
+</code></pre>
+
+<p>Returns <code class="prettyprint">true</code> if the given key is <em>not</em> pressed, and <code class="prettyprint">false</code> otherwise.</p>
+
+<h1 id="animating">Animating</h1>
+
+<p>Animations are created by showing still images called <strong>frames</strong> in rapid succession. The movies you see in a theater have 24 <strong>frames per second</strong> - that is, every second your brain is seeing twenty-four slightly different images, and stitching them together to give the illusion of motion.</p>
+
+<p>The easiest way to create animations with code is to endlessly loop a block of instructions that draws a single frame. Your computer can perform drawing instructions in less than a millisecond, so we need to insert a small pause between each repetition to give our brains enough time to process the frame.</p>
+
+<p>The easiest way to insert that pause is with the <code class="prettyprint">Window.frame</code> method, which can optionally take in the number of milliseconds to wait for. The default delay between frames is <code class="prettyprint">33</code> milliseconds, to achieve a <strong>frame rate</strong> of around 30 frames per second (<strong>fps</strong>).</p>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">frame</span><span class="o">()</span>
+<span class="n">Window</span><span class="o">.</span><span class="na">frame</span><span class="o">(</span><span class="n">milliseconds</span><span class="o">)</span>
+</code></pre>
+
+<h2 id="window-sleep">Window.sleep</h2>
+
+<p>You can insert a manual delay into the program with <code class="prettyprint">Window.sleep</code> which takes an integer number of <code class="prettyprint">milliseconds</code> to wait for.</p>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span> <span class="n">milliseconds</span> <span class="o">)</span>
+</code></pre>
+
+<h2 id="window-frame">Window.frame</h2>
+
+<p>The <code class="prettyprint">Window.frame</code> method starts <strong>double buffering</strong> the window. After the first call to <code class="prettyprint">Window.frame</code>, the visual state of the window is frozen, and all subsequent drawing commands are performed on a background window that is not shown. Once the <code class="prettyprint">Window.frame</code> method is called again, the background window&rsquo;s contents are copied and frozen on the visible window, and all subsequent drawings are again done on the background. This process eliminates flicker by ensuring a frame is fully rendered before displaying it on the screen, and adjusts the delay time between frames by the time taken to render the frame.</p>
+<pre class="highlight java"><code><span class="c1">// Setup...</span>
+<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Draw one frame...</span>
+  <span class="n">Window</span><span class="o">.</span><span class="na">frame</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre>
+
+<h1 id="customizing">Customizing</h1>
+
+<p>These methods change properties of APCS graphics or extend the functionality of other <code class="prettyprint">Window</code> methods.</p>
+
+<h2 id="window-setframerate">Window.setFrameRate</h2>
+
+<p>You can set the <strong>frame rate</strong> (the number of frames displayed each second) with the <code class="prettyprint">Window.setFrameRate</code> method. Setting the frame rate will automatically calculate the number of milliseconds to wait when <code class="prettyprint">Window.frame</code> is called with no arguments.</p>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">setFrameRate</span><span class="o">(</span><span class="n">rate</span><span class="o">)</span>
+</code></pre>
+
+<h2 id="window-addimage">Window.addImage</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">addImage</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">)</span>
+<span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">addImage</span><span class="o">(</span><span class="n">String</span> <span class="n">image</span><span class="o">,</span> <span class="n">String</span> <span class="n">imageName</span><span class="o">)</span>
+</code></pre>
+
+<p>Creates an alias for the given</p>
+
+<h2 id="window-addimages">Window.addImages</h2>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">addFolder</span><span class="o">(</span><span class="n">String</span> <span class="n">path</span><span class="o">)</span>
+</code></pre>
+
+<p>When used with a directory name, adds the given folder to the file path searched for images.</p>
+
+<h2 id="window-addkey">Window.addKey</h2>
+<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">addKey</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="kt">int</span> <span class="n">keyCode</span><span class="o">)</span>
+<span class="n">Window</span><span class="o">.</span><span class="na">addKey</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">equivalent</span><span class="o">)</span>
+</code></pre>
+
+<p>Creates a mapping from the given string key to an integer key code or alternate string key.</p>
+
+<h2 id="window-addcolor">Window.addColor</h2>
+
+<p>Built-in color strings can be defined with <code class="prettyprint">Window.addColor</code>. This creates a mapping from the color name to the given hex code or RGB value.</p>
+<pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">addColor</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">,</span> <span class="kt">int</span> <span class="n">r</span><span class="o">,</span> <span class="kt">int</span> <span class="n">g</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span>
+<span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">addColor</span><span class="o">(</span><span class="n">String</span> <span class="n">color</span><span class="o">,</span> <span class="n">String</span> <span class="n">hex</span><span class="o">)</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">addColor</span><span class="p">(</span><span class="nx">color</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
+<span class="nx">Window</span><span class="p">.</span><span class="nx">out</span><span class="p">.</span><span class="nx">addColor</span><span class="p">(</span><span class="nx">color</span><span class="p">,</span> <span class="nx">hex</span><span class="p">)</span>
+</code></pre>
+<pre class="highlight python"><code><span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">addColor</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">Window</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">addColor</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="nb">hex</span><span class="p">)</span>
+</code></pre>
+
+<aside class="notice">
+The 500 most popular colors are included in the window library - to add additional colors or modify the RGB values for a known color, use <code>Window.addColor</code>.
+</aside>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="java">java</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

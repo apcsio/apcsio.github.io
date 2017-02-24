@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Java quickstart</title>
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all.js"></script>
+  </head>
+
+  <body class="java java_index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="../images/logo.png" />
+        <div class="lang-selector">
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="get-started">Get started</h1>
+
+<p>Because of the relative complexity in compiling and running Java files, many programmers use an <strong>Integrated Development Environment</strong> (IDE) to edit and run Java programs. This guide will walk you through the setup for <strong>Eclipse</strong>, a free IDE that can be downloaded from <a href="http://eclipse.org">eclipse.org</a>, and the latest version of Java (Java 8).</p>
+
+<h1 id="install-java-8">Install Java 8</h1>
+
+<p>Eclipse requires <strong>Java 8</strong>, which you can <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">download from Oracle</a>. You must first accept their <a href="https://tldrlegal.com/license/oracle-binary-code-license-agreement-for-the-java-se-platform-products-and-javafx">license agreement</a>, after which you can download the installer for your <strong>operating system</strong>.</p>
+
+<p><img src="../images/setup/oracle.png" /></p>
+
+<h2 id="mac-osx">Mac OSX</h2>
+
+<p>The downloaded file will open a disk image, and you will have to double click the <code class="prettyprint">.pkg</code> file inside the disk image to run the installer.</p>
+
+<aside class="notice">
+You will need an account with administrator privileges to install Java 8.
+</aside>
+
+<p><img src="../images/setup/oracle-mac.png" /></p>
+
+<h2 id="windows">Windows</h2>
+
+<p>On some Windows computers, the JDK 8 installer will not properly configure your computer to work with Java. This can usually be fixed by <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/install/windows_jdk_install.html#BABGDJFH">setting your PATH variable</a>.</p>
+
+<p>Another possible issue that arises on Windows is when there are multiple versions of Java installed. Try uninstalling all versions of Java from the Control Panel, then re-install Java 8.</p>
+
+<h1 id="install-eclipse">Install Eclipse</h1>
+
+<p>The Eclipse installer can be downloaded from <a href="http://eclipse.org/downloads">eclipse.org/downloads</a>. Select your operating system to download its Eclipse installer.</p>
+
+<p><img src="../images/setup/eclipse-download-site.png" /></p>
+
+<p>Click the orange download button to start downloading Eclipse.</p>
+
+<p><img src="../images/setup/eclipse-download-button.png" /></p>
+
+<p>Open the downloaded Eclipse Installer and click &ldquo;Eclipse IDE for Java Developers&rdquo;.</p>
+
+<p><img src="../images/setup/eclipse-installer.png" /></p>
+
+<p>You can install Eclipse in the default <code class="prettyprint">eclipse</code> folder, or select a different folder.</p>
+
+<aside class="notice">
+On Mac OSX, you may want to change the installation folder to <code>/Applications/eclipse</code> if you don&rsquo;t plan on installing multiple versions of Eclipse.
+</aside>
+
+<p><img src="../images/setup/eclipse-installer-location.png" /></p>
+
+<p>Accept the <a href="https://www.tldrlegal.com/l/epl">Eclipse license agreement</a> (or click &ldquo;Decide Later&rdquo;) to begin the installation.</p>
+
+<p><img src="../images/setup/eclipse-installer-agreement.png" /></p>
+
+<p>Once Eclipse has completed installation, you can click the green Launch button to open it.</p>
+
+<p><img src="../images/setup/eclipse-installer-launch.png" /></p>
+
+<h1 id="using-eclipse">Using Eclipse</h1>
+
+<p>When you open Eclipse for the first time, you will need to click the &ldquo;Workbench&rdquo; link.</p>
+
+<p><img src="../images/setup/eclipse-welcome.png" /></p>
+
+<p>The Workbench is a feature-rich text editor that starts off with many additional panels that aren&rsquo;t immediately necessary. We recommend clicking the x&rsquo;s to close every panel <em>except for the Package Explorer</em>.</p>
+
+<p><img src="../images/setup/eclipse-close-panels.png" /></p>
+
+<aside class="notice">
+You can re-open any panel by going to <code>Window</code> > <code>Show View</code> and clicking on its name.
+</aside>
+
+<h2 id="create-a-project">Create a project</h2>
+
+<p>A Java Project is just a folder on your computer that is organized by Eclipse. You can create Java Projects by right clicking on the Package Explorer, hovering over <code class="prettyprint">New</code>, and selecting <code class="prettyprint">Java Project</code>.</p>
+
+<p><img src="../images/setup/eclipse-new.png" /></p>
+
+<aside class="warning">
+If you hid the package explorer, navigate in the top menu to <code>Window</code> > <code>Show View</code> > <code>Package Explorer</code> to re-open it.
+</aside>
+
+<p>In the dialog box that pops up, enter a name for the project, then click &ldquo;Finish&rdquo;.</p>
+
+<p><img src="../images/setup/eclipse-new-project.png" /></p>
+
+<h2 id="create-a-file">Create a file</h2>
+
+<p>To create a file, right click on the <code class="prettyprint">src</code> folder, hover over &ldquo;New&rdquo;, and select &ldquo;Class&rdquo;.</p>
+
+<p><img src="../images/setup/eclipse-new-file.png" /></p>
+
+<p>The name of a class file must begin with a letter and contain no spaces or punctuation. In Java, it is convention to capitalize the name of a class.</p>
+<pre class="highlight java"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sandbox</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<p><img src="../images/setup/eclipse-name-file.png" /></p>
+
+<aside class="success">
+Check the <code>public static void main</code> box to automatically generate the structure for a basic Java program.
+</aside>
+
+<h3 id="create-a-package">Create a package</h3>
+
+<p>A package is a sub-folder within the Java Project that provides an additional level of organization for your class files. You can create a project by right-clicking on the project and selecting <code class="prettyprint">Package</code> from the <code class="prettyprint">New</code> menu. Package names are conventionally written in lower case.</p>
+
+<p><img src="../images/setup/eclipse-new-file.png" /></p>
+<pre class="highlight java"><code><span class="kn">package</span> <span class="n">example</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span> <span class="o">...</span>
+
+</code></pre>
+
+<p>When a class file is added to a package, an instruction is added to the beginning of the file that marks the</p>
+
+<h2 id="install-a-library">Install a library</h2>
+
+<p>Our curriculum uses <a href="http://apcs.io">APCS</a> graphics, a free and open-source <strong>library</strong> developed at techlab for building games and animations. We distribute the code through a <strong>Java archive</strong> file, which uses the <code class="prettyprint">.jar</code> extension. In general, you will find that Java developers distribute code through <code class="prettyprint">.jar</code> files, so this process applies to <em>any library</em> that you wish to use in the future, not just ours.</p>
+
+<p>Once you have <a href="http://apcs.io/download/apcs.jar">downloaded the APCS library</a>, you will need to drag the <code class="prettyprint">apcs.jar</code> file from its location on your computer to a Java Project in Eclipse. Ensure that &ldquo;copy files&rdquo; is selected, then click OK.</p>
+
+<aside class="notice">
+Be sure to drop the file on the project&rsquo;s name (not on the `src` folder).
+</aside>
+
+<p><img src="../images/setup/library-copy.gif" /></p>
+
+<p>To tell Eclipse to use the APCS library, you will need to add it to the <strong>build path</strong>. Right click on <code class="prettyprint">apcs.jar</code>, hover over &ldquo;Build Path&rdquo;, then click &ldquo;Add to Build Path&rdquo;.</p>
+
+<p><img src="../images/setup/library-build-path.gif" /></p>
+
+<aside class="warning">
+Do not move or delete the `apcs.jar` file inside the Java Project. If you create another Java Project, you will have to repeat these two steps to use the APCS library in it.
+</aside>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

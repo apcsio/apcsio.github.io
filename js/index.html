@@ -1,0 +1,80 @@
+<html>
+<head>
+</head>
+<body>
+
+<script src="js/apcs.js"></script>
+<script>
+function Ball() {
+    this.x = Window.rollDice(Window.width());
+    this.y = Window.rollDice(Window.height());
+    this.radius = Window.rollDice(40) + 10;
+    this.dx = Window.rollDice(21) - 11;
+    this.dy = 0;
+    this.color = ['red', 'green', 'blue', 'yellow', 'orange', 'purple'][Window.rollDice(6) - 1];
+
+    this.draw = function() {
+        Window.out.circle(this.x, this.y, this.radius, this.color);
+    };
+
+    this.move = function() {
+        this.x += this.dx;
+        this.y += this.dy;
+        this.dy += 1;
+        if (this.y > Window.height() - this.radius) {
+            this.y = Window.height() - this.radius;
+            this.dy *= -0.9;
+        }
+        if (this.x < this.radius) {
+            this.x = this.radius;
+            this.dx *= -1;
+        }
+        if (this.x > Window.width() - this.radius) {
+            this.x = Window.width() - this.radius;
+            this.dx *= -1;
+        }
+    };
+
+    this.touching = function(other) {
+        if (Array.isArray(other)) {
+            for (var i = 0 ; i < other.length ; i++)
+                if (this != other[i] && this.touching(other[i]))
+                    return true;
+            return false;
+        }
+        else return Math.sqrt(
+            Math.pow(other.x - this.x, 2) +
+            Math.pow(other.y - this.y, 2)) <= this.radius + other.radius;
+    };
+};
+Window.screen();
+
+var balls = [],
+    numBalls = 10;
+for (var i = 0 ; i < numBalls ; i++) {
+    balls.push(new Ball());
+    while (balls[i].touching(balls))
+        balls[i] = new Ball();
+}
+
+Window.frame(function() {
+    Window.out.background("white");
+    for (var i = 0 ; i < balls.length ; i++) {
+        balls[i].draw();
+        balls[i].move();
+        for (var j = i + 1 ; j < balls.length ; j++) {
+            if (balls[i].touching(balls[j])) {
+                var tempdx = balls[i].dx;
+                var tempdy = balls[i].dy;
+                balls[i].dx = balls[j].dx;
+                balls[i].dy = balls[j].dy;
+                balls[j].dx = tempdx;
+                balls[j].dy = tempdy;
+
+            }
+        }
+    }
+});
+</script>
+</body>
+</html>

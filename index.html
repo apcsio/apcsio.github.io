@@ -5,6 +5,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>APCS graphics</title>
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <style>
       .highlight table td { padding: 5px; }
@@ -113,35 +114,32 @@
       <div class="content">
         <h1 id="apcs-graphics">APCS graphics</h1>
 
-<p>APCS graphics is an open-source multi-language approach to learning and teaching All Principles of Computer Science.</p>
+<p>APCS graphics is an open-source multi-language approach to learning and teaching <strong>A</strong>ll Principles of Computer Science. It was built by <a href="http://keshav.is">Keshav Saharia</a> to teach introductory computer science at <a href="https://techlab.education">Techlab Education</a>, and is now used by coding classrooms around the world.</p>
 
-<p>The <a href="lab">game development labs</a> teach computer science through animation and digital artwork, which is a fantastic medium for younger students. The <a href="mp">machine problems</a> build algorithmic thinking and problem solving skills that are essential for computation challenges like <a href="usaco">USACO</a>.</p>
+<p>It can be used in game development to teach computer science through animation and digital artwork, which is a fantastic medium for younger students. It is also great for quickly creating interactive visualizations and simulations.</p>
 
 <blockquote>
 <p>The core APCS graphics libraries are hosted on <a href="https://github.com/apcsio">GitHub</a>. We encourage developers and educators to interact with us on GitHub and make contributions to this project!</p>
 </blockquote>
 
-<p><strong>Java:</strong> read the <a href="start/java">getting started guide</a> to get Eclipse, Java 8, and the APCS graphics library set up on your computer.</p>
+<p><strong>Java:</strong> read the <a href="java">getting started guide</a> to get Eclipse, Java 8, and the APCS graphics library set up on your computer.</p>
 
-<p><a href="java/Window.java" class="download">Window.java</a></p>
+<p><a href="java/Window.java" class="download">Window.java</a>
+<a href="java/apcs.jar" class="download">apcs.jar</a></p>
 
 <p><strong>JavaScript:</strong> add the <a href="js/apcs.js">JavaScript library</a> to any HTML page.</p>
 
 <p><a href="js/apcs.js" class="download">apcs.js</a></p>
 
-<p><strong>Python:</strong> quickly get started with <a href="https://pythonroom.com">pythonroom.com</a>, our web-based coding editor, or read the <a href="start/python">guide</a> to get a Python editor and the APCS graphics package set up on your computer.</p>
+<p><strong>Python:</strong> quickly get started with <a href="https://pythonroom.com">pythonroom.com</a>, our web-based coding editor, or read the <a href="python">guide</a> to get a Python editor and the APCS graphics package set up on your computer.</p>
 
 <p><a href="python/apcs.py" class="download">apcs.py</a></p>
 
 <aside class="success">
-    The complete list of labs is at <a href="lab">apcs.io/lab</a>.
+    There is an online curriculum for teaching Java hosted on <a href="https://curriculum.io/java">curriculum.io/java</a>.
 </aside>
 
-<aside class="notice">
-    The complete list of machine problems is at <a href="lab">apcs.io/mp</a>.
-</aside>
-
-<p>APCS graphics is an open-source project by <a href="https://github.com/keshavsaharia">Keshav Saharia</a> and the team at <a href="http://hulaloop.io">Hulaloop</a>. We welcome contributions to this project on <a href="https://github.com/apcsio">GitHub</a>.</p>
+<p>We welcome contributions to this project on <a href="https://github.com/apcsio">GitHub</a>.</p>
 
 <h2 id="quickstart">Quickstart</h2>
 <pre class="highlight html"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://apcs.io/js/apcs.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -252,17 +250,11 @@
 <span class="n">Window</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/physics.gif" /></p>
+<p><img src="images/physics/real-bouncing.gif" /></p>
 
 <h1 id="drawing">Drawing</h1>
 
-<p>The functions for drawing ovals, rectangles, lines, polygons, and text are organized in the <code class="prettyprint">Window.out</code> class.</p>
-
-<blockquote>
-<p>Calling any <code class="prettyprint">Window.out</code> method will create a default window that is 500 x 500 pixels if the window is not already open.</p>
-</blockquote>
-
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/window-drawing.png" /></p>
+<p>The functions for drawing ovals, rectangles, lines, polygons, and text are organized in the <code class="prettyprint">Window.out</code> class. Calling any <code class="prettyprint">Window.out</code> method will create a default window that is 500 x 500 pixels if the window is not already open.</p>
 
 <h2 id="window-size">Window.size</h2>
 <pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span>
@@ -393,7 +385,7 @@ will also be set to the given color.
         <span class="n">b</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/multi-ball.gif" /></p>
+<p><img src="images/bouncing-balls/customizable.png" /></p>
 
 <h2 id="window-out-square">Window.out.square</h2>
 <pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">square</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">)</span>
@@ -405,7 +397,7 @@ will also be set to the given color.
 
 <p><code class="prettyprint">Window.out.square</code> draws a square centered at the position (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) with the given side <code class="prettyprint">length</code>.</p>
 
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/gameoflife.gif" /></p>
+<p><img src="images/game-of-life/example.gif" /></p>
 
 <h2 id="window-out-rectangle">Window.out.rectangle</h2>
 <pre class="highlight java"><code><span class="kt">void</span> <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">rectangle</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span>
@@ -417,7 +409,7 @@ will also be set to the given color.
 
 <p><code class="prettyprint">Window.out.rectangle</code> draws a rectangle centered at the position (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) with the given <code class="prettyprint">width</code> and <code class="prettyprint">height</code>.</p>
 
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/flappybird.gif" /></p>
+<p><img src="images/flappy-bird/example.gif" /></p>
 
 <h2 id="window-out-oval">Window.out.oval</h2>
 
@@ -425,7 +417,7 @@ will also be set to the given color.
 <pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">oval</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">)</span>
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/flappy-basic.gif" /></p>
+<p><img src="images/flappy-bird/debounce-challenge.gif" /></p>
 
 <blockquote>
 <p>We start the <a href="https://techlab.education/java/flappy-bird">Flappy Bird lab</a> by drawing a simple oval to represent the bird, and first implementing the physics behind the bird&rsquo;s motion.</p>
@@ -445,41 +437,6 @@ will also be set to the given color.
 
 <p><code class="prettyprint">Window.out.image</code> draws the image located at the <code class="prettyprint">image</code> string at the given (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) coordinate in the top left corner.</p>
 
-<h2 id="window-out-background">Window.out.background</h2>
-
-<p><code class="prettyprint">Window.out.background</code> sets the background of the window to the color specified by the string name or RGB value. <strong>This method erases everything that has been drawn on the window and replaces it with the given color.</strong> Setting the background will also change the current drawing color to that color.</p>
-<pre class="highlight java"><code><span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="n">colorName</span><span class="o">)</span>
-<span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="n">red</span><span class="o">,</span> <span class="n">green</span><span class="o">,</span> <span class="n">blue</span><span class="o">)</span>
-</code></pre>
-
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/single-ball.gif" /></p>
-<pre class="highlight java"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">250</span><span class="o">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">250</span><span class="o">,</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="mi">4</span><span class="o">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-
-<span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// Draw the background first.</span>
-    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">background</span><span class="o">(</span><span class="s">"white"</span><span class="o">);</span>
-
-    <span class="c1">// Change the color to the ball's color, then draw it.</span>
-    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">color</span><span class="o">(</span><span class="s">"red"</span><span class="o">);</span>
-    <span class="n">Window</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">circle</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
-
-    <span class="c1">// Move the ball.</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="o">;</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="o">;</span>
-
-    <span class="c1">// Check for collisions.</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">490</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">490</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
-
-    <span class="c1">// Draw one frame.</span>
-    <span class="n">Window</span><span class="o">.</span><span class="na">frame</span><span class="o">();</span>
-<span class="o">}</span>
-
-</code></pre>
-
 <h1 id="mouse-input">Mouse input</h1>
 
 <h2 id="window-mouse-getx">Window.mouse.getX</h2>
@@ -489,7 +446,7 @@ will also be set to the given color.
 <span class="kt">int</span> <span class="n">Window</span><span class="o">.</span><span class="na">mouse</span><span class="o">.</span><span class="na">getY</span><span class="o">()</span>
 </code></pre>
 
-<p><img src="https://raw.githubusercontent.com/apcsio/apcsio.github.io/master/image/window-mouse.png" /></p>
+<p><img src="images/diagram/window-mouse.png" /></p>
 
 <h2 id="window-mouse-gety">Window.mouse.getY</h2>
 <pre class="highlight java"><code><span class="kt">int</span> <span class="n">Window</span><span class="o">.</span><span class="na">mouse</span><span class="o">.</span><span class="na">getY</span><span class="o">()</span>
@@ -596,6 +553,8 @@ The y-axis in Java graphics is inverted, so the mouse&rsquo;s y position increas
 <aside class="notice">
 The 500 most popular colors are included in the window library - to add additional colors or modify the RGB values for a known color, use <code>Window.addColor</code>.
 </aside>
+
+<p>&copy; <a href="https://techlab.education">Techlab Education</a>, 2017. All Rights Reserved.</p>
 
       </div>
       <div class="dark-box">

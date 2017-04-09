@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ridesharing</title>
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="../../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../../javascripts/all_nosearch.js"></script>
+  </head>
+
+  <body class="lab lab_ridesharing lab_ridesharing_index" data-languages="[&quot;java&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../../images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="../../images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="java">java</a>
+        </div>
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="ridesharing">Ridesharing</h1>
+
+<p>In this lab, you will use Java code to manage a ride-sharing system on an enclosed city grid, where cars can pick up passengers and transport them to their
+destination. The goal of this lab is to creatively develop algorithms and take them from theory to application.</p>
+
+<h2 id="get-started">Get Started</h2>
+
+<p><strong>Java:</strong> read the <a href="/java">getting started guide</a> to get Eclipse and Java 8. Include the <code class="prettyprint">ridesharing.jar</code> file into the build path of your
+Java project, just as you did for <code class="prettyprint">apcs.jar</code>.</p>
+
+<p><a href="/java/ridesharing.jar" class="download">ridesharing.jar</a></p>
+
+<h2 id="simulation">Simulation</h2>
+
+<ul>
+<li><p>Passengers are represented by <code class="prettyprint">Passenger</code> objects.</p>
+
+<ul>
+<li>Passengers start at random locations, and have random destinations.</li>
+<li>Passengers appear as blue dots when they are waiting for a ride.</li>
+<li>A passenger can only be assigned a single car to pick it up at a time.</li>
+<li>When a passenger is in a car, its destination is drawn on the map as a blue circle.</li>
+</ul></li>
+<li><p>Cars are represented by <code class="prettyprint">Car</code> objects.</p>
+
+<ul>
+<li>Cars can carry up to three passengers at a time.</li>
+<li>Cars travel at a constant speed and do not experience acceleration/deceleration or traffic.</li>
+<li>Cars cannot collide with each other or break down in any way.</li>
+<li>An idling car is drawn in red, a</li>
+</ul></li>
+<li><p>Locations are represented by <code class="prettyprint">Location</code> objects.</p>
+
+<ul>
+<li>Each location is an (<code class="prettyprint">x</code>, <code class="prettyprint">y</code>) pair.</li>
+<li>Passengers and cars represent their locations and destinations with <code class="prettyprint">Location</code> objects.</li>
+<li>Distances are measured in <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">Manhattan distance</a> (the sum of the absolute values of the x and y difference).</li>
+</ul></li>
+<li><p>The city is represented by a <code class="prettyprint">City</code> object.</p>
+
+<ul>
+<li>The city is a grid of streets on which there are cars and passengers.</li>
+<li>There are five abstract methods to control how the city&rsquo;s ridesharing system operates.</li>
+</ul></li>
+</ul>
+
+<h1 id="classes">Classes</h1>
+
+<p>Below is detailed documentation on each of the classes in the <code class="prettyprint">ridesharing</code> package.</p>
+
+<h2 id="location">Location</h2>
+<pre class="highlight java"><code><span class="kd">public</span> <span class="n">Location</span> <span class="o">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">y</span><span class="o">;</span>
+
+    <span class="c1">// Generate a random location</span>
+    <span class="kd">public</span> <span class="n">Location</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// ...</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Generate a fixed location</span>
+    <span class="kd">public</span> <span class="n">Location</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// ...</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Make this location a copy of the given location</span>
+    <span class="kd">public</span> <span class="n">Location</span><span class="o">(</span><span class="n">Location</span> <span class="n">toCopy</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// ...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+<p>The <code class="prettyprint">Location</code> object describes a position in the city. A location object is just an <code class="prettyprint">x</code> and <code class="prettyprint">y</code> position, and calculates distances between points as
+Manhattan distance (i.e. the square distance).</p>
+
+<p>You can either generate a random location by calling the <code class="prettyprint">Location()</code> constructor, or setting its value with the other constructors.</p>
+
+<h2 id="passenger">Passenger</h2>
+<pre class="highlight java"><code><span class="kd">public</span> <span class="n">Passenger</span> <span class="o">{</span>
+    <span class="c1">// Starts at a random location</span>
+    <span class="n">Location</span> <span class="n">location</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Location</span><span class="o">();</span>
+
+    <span class="c1">// Destination is also random</span>
+    <span class="n">Location</span> <span class="n">destination</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Location</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre>
+
+<p>A passenger is just two <code class="prettyprint">Location</code> objects, and some boolean flags to keep track of the passenger&rsquo;s state.</p>
+
+<h3 id="passenger-locations">Passenger locations</h3>
+<pre class="highlight java"><code><span class="n">Passenger</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Passenger</span><span class="o">();</span>
+<span class="n">p</span><span class="o">.</span><span class="na">getLocation</span><span class="o">()</span>        <span class="c1">// returns a Location object</span>
+<span class="n">p</span><span class="o">.</span><span class="na">getDestination</span><span class="o">()</span>     <span class="c1">// returns a Location object</span>
+</code></pre>
+
+<p>Use <code class="prettyprint">getLocation</code> and <code class="prettyprint">getDestination</code>.</p>
+
+<h3 id="assigning-a-passenger-to-a-car">Assigning a passenger to a car</h3>
+<pre class="highlight java"><code><span class="n">Passenger</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Passenger</span><span class="o">();</span>
+<span class="n">Car</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">();</span>
+
+<span class="n">p</span><span class="o">.</span><span class="na">setCar</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+<span class="n">p</span><span class="o">.</span><span class="na">getCar</span><span class="o">()</span>      <span class="c1">// returns c</span>
+</code></pre>
+
+<p>Assign a passenger to a car with <code class="prettyprint">setCar(Car c)</code>.
+ - If the passenger already has an assigned car, it will cancel the ride and remove its location from the current car&rsquo;s destinations.
+ - The passenger can only be picked up by the car that it is assigned to.
+ - The car simply needs to travel close enough to the passenger in order to pick them up.</p>
+
+<p>Use <code class="prettyprint">getCar()</code> to retrieve the <code class="prettyprint">Car</code> object assigned to the passenger (or <code class="prettyprint">null</code> if no car was assigned).</p>
+
+<h3 id="checking-the-state-of-a-passenger">Checking the state of a passenger</h3>
+
+<p>The <code class="prettyprint">isWaiting</code>, <code class="prettyprint">isDroppedOff</code>, <code class="prettyprint">atDestination</code>, and <code class="prettyprint">hasCar</code> methods return <code class="prettyprint">boolean</code>s.</p>
+<pre class="highlight java"><code><span class="n">Passenger</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Passenger</span><span class="o">();</span>
+
+<span class="n">p</span><span class="o">.</span><span class="na">isWaiting</span><span class="o">()</span>       <span class="c1">// returns true if the passenger is waiting outside</span>
+<span class="n">p</span><span class="o">.</span><span class="na">hasCar</span><span class="o">()</span>          <span class="c1">// returns true if the passenger has a car</span>
+<span class="n">p</span><span class="o">.</span><span class="na">isDroppedOff</span><span class="o">()</span>    <span class="c1">// returns true if the passenger has been dropped off</span>
+</code></pre>
+
+<h2 id="car">Car</h2>
+<pre class="highlight java"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
+    <span class="n">Location</span> <span class="n">location</span><span class="o">;</span>
+
+    <span class="n">List</span> <span class="o">&lt;</span><span class="n">Location</span><span class="o">&gt;</span> <span class="n">destinations</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+
+<p>A car has a <code class="prettyprint">Location</code> object that stores its current position, and a list of <code class="prettyprint">Location</code> objects to store a sequence of destinations.</p>
+
+<h3 id="car-locations">Car locations</h3>
+<pre class="highlight java"><code><span class="n">Car</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="o">();</span>
+<span class="n">c</span><span class="o">.</span><span class="na">getLocation</span><span class="o">()</span>        <span class="c1">// returns a Location object</span>
+<span class="n">c</span><span class="o">.</span><span class="na">getDestination</span><span class="o">()</span>     <span class="c1">// returns a Location object, or null if the car is idling</span>
+<span class="n">c</span><span class="o">.</span><span class="na">getDestinations</span><span class="o">()</span>    <span class="c1">// Returns the list of destinations</span>
+
+<span class="c1">// Example - sort the destinations by distance to a passenger</span>
+<span class="n">Passenger</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Passenger</span><span class="o">();</span>
+<span class="n">c</span><span class="o">.</span><span class="na">getDestinations</span><span class="o">().</span><span class="na">sort</span><span class="o">(</span><span class="k">new</span> <span class="n">Comparator</span> <span class="o">&lt;</span><span class="n">Location</span><span class="o">&gt;</span> <span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">compare</span><span class="o">(</span><span class="n">Location</span> <span class="n">a</span><span class="o">,</span> <span class="n">Location</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="na">distanceTo</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="na">distanceTo</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">});</span>
+</code></pre>
+
+<p>Use <code class="prettyprint">getLocation</code> and <code class="prettyprint">getDestination</code> to get the current location and destination of the car. If the car is idling, <code class="prettyprint">getDestination</code> returns <code class="prettyprint">null</code>.</p>
+
+<p>To get the full list of destinations of the car, use <code class="prettyprint">getDestinations</code>.</p>
+
+<h2 id="city">City</h2>
+
+<ul>
+<li>Todo: <code class="prettyprint">getCarInState(state)</code> which takes an integer state, and returns a list of all cars in that state</li>
+</ul>
+
+<h1 id="examples">Examples</h1>
+
+<p>Here are some example ridesharing algorithms. A full set of examples will be on <a href="https://github.com/techlabeducation/ridesharing">GitHub</a>.</p>
+
+<h2 id="first-car-found">First car found</h2>
+
+<p>The <code class="prettyprint">onRequest</code> method picks the first non-idling car it can find, and assigns it to the passenger.</p>
+
+<p><strong>Cons</strong>:
+ - Passenger does not get served by nearest car
+ - If all cars are busy, passenger does not get served</p>
+<pre class="highlight java"><code><span class="kn">import</span> <span class="nn">ridesharing.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicRidesharing</span> <span class="kd">extends</span> <span class="n">City</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="n">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">BasicRidesharing</span> <span class="n">simulation</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicRidesharing</span><span class="o">();</span>
+        <span class="n">simulation</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onRequest</span><span class="o">(</span><span class="n">Passenger</span> <span class="n">passenger</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">Car</span> <span class="n">c</span> <span class="o">:</span> <span class="n">getCars</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">isIdling</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">passenger</span><span class="o">.</span><span class="na">setCar</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+                <span class="k">return</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * Called when a car is assigned.
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onAssign</span><span class="o">(</span><span class="n">Car</span> <span class="n">car</span><span class="o">,</span> <span class="n">Passenger</span> <span class="n">passenger</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">car</span><span class="o">.</span><span class="na">addDestination</span><span class="o">(</span><span class="n">passenger</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * Called when a car has reached a passenger it is assigned to pick up.
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onPickUp</span><span class="o">(</span><span class="n">Car</span> <span class="n">car</span><span class="o">,</span> <span class="n">Passenger</span> <span class="n">passenger</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Get the passenger's destination</span>
+        <span class="n">Location</span> <span class="n">destination</span> <span class="o">=</span> <span class="n">passenger</span><span class="o">.</span><span class="na">getDestination</span><span class="o">();</span>
+        <span class="c1">// Add the passenger's destination to the car's list of destinations</span>
+        <span class="n">car</span><span class="o">.</span><span class="na">addDestination</span><span class="o">(</span><span class="n">destination</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDropOff</span><span class="o">(</span><span class="n">Car</span> <span class="n">car</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Unimplemented</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onTimeStep</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Unimplemented</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="java">java</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

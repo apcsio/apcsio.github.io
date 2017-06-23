@@ -198,7 +198,7 @@ public class Window extends JApplet {
 		 * Returns true if the given key is pressed.
 		 */
 		public static boolean pressed(String key) {
-			if (key == null) return false;
+			if (key == null || keyMap == null) return false;
 			else if (keyMap.containsKey(key))
 				return Window.getInstanceFromThread().isVirtualKeyPressed(keyMap.get(key));
 			else if (key.length() > 0)

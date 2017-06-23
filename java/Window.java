@@ -43,6 +43,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JApplet;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -276,6 +281,38 @@ public class Window extends JApplet {
 				Window.sleep(10);
 			}
 		}
+	}
+	
+	/**
+	 * For playing sounds.
+	 */
+	public static class sound {
+		
+		public static void play(final String file) {
+			
+			new Thread() {
+				public void run() {
+					// Open an audio input stream.
+					try {
+						AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File(file));
+						// Get a sound clip resource.
+				         Clip clip = AudioSystem.getClip();
+				         // Open audio clip and load samples from the audio input stream.
+				         clip.open(audioIn);
+				         clip.start();
+				         
+					} catch (UnsupportedAudioFileException e) {
+						System.err.println(file + " is not a supported audio file type.");
+						e.printStackTrace();
+					} catch (IOException e) {
+						System.err.println("Could not play the sound.");
+					} catch (LineUnavailableException e) {
+						System.err.println("Line is not available to play sounds.");
+					}   
+				}
+			}.start();
+		}
+		
 	}
 
 	/**

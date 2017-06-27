@@ -10,6 +10,7 @@ class Window:
 
     _mousex = 0
     _mousey = 0
+    _keypressed = {}
 
     @staticmethod
     def size(w, h):
@@ -30,30 +31,37 @@ class Window:
 
     @staticmethod
     def start():
-        Window.root.bind("<Motion>", Window.mouseMotion)
-        Window.root.bind("<Button-1>", Window.mouseClick)
-        Window.root.bind("<ButtonRelease-1>", Window.mouseRelease)
+        Window.root.bind("<Motion>", Window._mouseMotion)
+        Window.root.bind("<KeyPress>", Window._keyPressed)
+        Window.root.bind("<KeyRelease>", Window._keyReleased)
+        Window.root.bind("<Button-1>", Window._mouseClicked)
+        Window.root.bind("<ButtonRelease-1>", Window._mouseReleased)
         Window.root.after(0, Window.drawFrame)
         Window.root.wm_attributes("-topmost" , -1)
         Window.root.after(1, lambda: Window.root.focus_force())
         Window.root.mainloop()
 
     @staticmethod
-    def mouseMotion(event):
+    def _mouseMotion(event):
         Window._mousex = event.x
         Window._mousey = event.y
 
     @staticmethod
-    def mouseClick(event):
+    def _mouseClicked(event):
         Window._mouseclick = True
 
     @staticmethod
-    def mouseRelease(event):
+    def _mouseReleased(event):
         Window._mouseclick = False
 
     @staticmethod
-    def keyPressed(event):
-        print(event.char)
+    def _keyPressed(event):
+        Window._keypressed[event.char] = True
+
+    @staticmethod
+    def _keyReleased(event):
+        if event.char in Window._keypressed:
+            del Window._keypressed[event.char]
 
     @staticmethod
     def drawFrame():
@@ -65,6 +73,15 @@ class Window:
     @staticmethod
     def frame(cb):
         Window._frame.append(cb)
+
+    class key:
+        @staticmethod
+        def pressed(k):
+            return k in Window._keypressed
+
+        @staticmethod
+        def released(k):
+            return k not in Window._keypressed
 
     class mouse:
         @staticmethod

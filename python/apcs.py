@@ -34,7 +34,7 @@ class Window:
         Window.root.bind("<Motion>", Window._mouseMotion)
         Window.root.bind("<KeyPress>", Window._keyPressed)
         Window.root.bind("<KeyRelease>", Window._keyReleased)
-        Window.root.bind("<Button-1>", Window._mouseClicked)
+        Window.root.bind("<ButtonPress-1>", Window._mouseClicked)
         Window.root.bind("<ButtonRelease-1>", Window._mouseReleased)
         Window.root.after(0, Window.drawFrame)
         Window.root.wm_attributes("-topmost" , -1)
@@ -56,6 +56,7 @@ class Window:
 
     @staticmethod
     def _keyPressed(event):
+        print(event.char)
         Window._keypressed[event.char] = True
 
     @staticmethod
@@ -92,6 +93,10 @@ class Window:
         def getY():
             return Window._mousey
 
+        @staticmethod
+        def clicked():
+            return Window._mouseclick
+
     class out:
 
         @staticmethod
@@ -122,6 +127,16 @@ class Window:
         @staticmethod
         def line(x, y, ex, ey):
             Window.instance.drawLine(x, y, ex, ey)
+
+        @staticmethod
+        def font(fnt, size):
+            Window._font = fnt
+            Window._fontSize = size
+
+        @staticmethod
+        def text(txt, x, y):
+            pass
+
 
 class WindowInstance(Frame):
 
@@ -155,6 +170,9 @@ class WindowInstance(Frame):
         self.canvas.create_oval(x, y, x + w, y + h, fill=self.fill, outline=self.outline)
         if not self.doubleBuffer:
             self.canvas.pack(fill=BOTH, expand=1)
+
+    def drawText(self, txt, x, y):
+        pass
 
     def frame(self):
         self.doubleBuffer = True

@@ -129,13 +129,12 @@ class Window:
             Window.instance.drawLine(x, y, ex, ey)
 
         @staticmethod
-        def font(fnt, size):
-            Window._font = fnt
-            Window._fontSize = size
+        def font(fnt):
+            Window.instance.font = fnt
 
         @staticmethod
         def text(txt, x, y):
-            pass
+            Window.instance.drawText(txt, x, y)
 
 
 class WindowInstance(Frame):
@@ -151,6 +150,7 @@ class WindowInstance(Frame):
 
         self.fill = "#000"
         self.outline = "#000"
+        self.font = "Courier 16"
 
     def setColor(self, c):
         self.fill = c
@@ -172,7 +172,9 @@ class WindowInstance(Frame):
             self.canvas.pack(fill=BOTH, expand=1)
 
     def drawText(self, txt, x, y):
-        pass
+        self.canvas.create_text(x, y, text=txt, font=self.font, fill=self.fill)
+        if not self.doubleBuffer:
+            self.canvas.pack(fill=BOTH, expand=1)
 
     def frame(self):
         self.doubleBuffer = True

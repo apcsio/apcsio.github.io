@@ -56,7 +56,6 @@ class Window:
 
     @staticmethod
     def _keyPressed(event):
-        print(event.char)
         Window._keypressed[event.char] = True
 
     @staticmethod
@@ -95,7 +94,7 @@ class Window:
 
         @staticmethod
         def clicked():
-            return Window._mouseclick
+            return Window._mouseclick == True
 
     class out:
 

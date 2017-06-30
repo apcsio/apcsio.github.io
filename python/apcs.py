@@ -155,6 +155,12 @@ class WindowInstance(Frame):
     def setColor(self, c):
         self.fill = c
         self.outline = c
+    
+    def setFill(self, f):
+        self.fill = f
+    
+    def setOutline(self, o):
+        self.outline = o
 
     def drawRectangle(self, x, y, w, h):
         self.canvas.create_rectangle(x, y, x + w, y + h, fill=self.fill, outline=self.outline)

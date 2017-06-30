@@ -10,6 +10,7 @@ class Window:
 
     _mousex = 0
     _mousey = 0
+    _mouseclick = False
     _keypressed = {}
 
     @staticmethod
